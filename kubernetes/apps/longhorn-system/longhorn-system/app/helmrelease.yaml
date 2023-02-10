@@ -21,7 +21,6 @@ spec:
       defaultClassReplicaCount: 1
     defaultSettings:
       defaultReplicaCount: 1
-      defaultLonghornStaticStorageClass: longhorn
     ingress:
       main:
         enabled: true
