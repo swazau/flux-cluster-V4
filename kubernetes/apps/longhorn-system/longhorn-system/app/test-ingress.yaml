@@ -1,20 +1,27 @@
 ---
-apiVersion: networking.k8s.io/v1
+kind: Service
+apiVersion: v1
+metadata:
+  name: testing-service
+  namespace: testing-longhorn
+spec:
+  selector:
+    app: longhorn-test
+  ports:
+    - port: 80 # Default port for image
+---
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: testing-ingress
   namespace: testing-longhorn
-spec:
-  ingressClassName: nginx
   annotations:
-    nginx.ingress.kubernetes.io/whitelist-source-range: |
-      10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
-    hajimari.io/enable: "false"
-  hosts:
-    - host: &host "testing.${SECRET_DOMAIN}"
-      paths:
-        - path: /
-          pathType: Prefix
-  tls:
-    - hosts:
-        - *host
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: testing-service
+              servicePort: 80
