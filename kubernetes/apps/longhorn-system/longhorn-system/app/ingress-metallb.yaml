@@ -7,8 +7,7 @@ metadata:
   annotations:
 spec:
   ports:
-    - port: 80
-      targetPort: 80
-      selector:
-        app: longhorn-ui
-        type: LoadBalancer
+    targetPort: 80
+  selector:
+    app: longhorn-ui
+  type: LoadBalancer
