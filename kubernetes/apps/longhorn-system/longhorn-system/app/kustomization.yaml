@@ -5,5 +5,3 @@ namespace: longhorn-system
 resources:
   - ./helmrelease.yaml
   - ./test.yaml
-  #- ./test-ingress.yaml
-  - ./ingress-metallb.yaml
