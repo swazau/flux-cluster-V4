@@ -17,10 +17,6 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    persistence:
-      defaultClassReplicaCount: 1
-    defaultSettings:
-      defaultReplicaCount: 1
     ingress:
       main:
         enabled: true
@@ -37,3 +33,7 @@ spec:
         tls:
           - hosts:
               - *host
+    persistence:
+      defaultClassReplicaCount: 1
+    defaultSettings:
+      defaultReplicaCount: 1
