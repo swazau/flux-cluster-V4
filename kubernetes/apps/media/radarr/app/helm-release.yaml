@@ -49,11 +49,18 @@ spec:
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups: [10000]
     volumeClaimTemplates:
-      - name: config
+      - name: radarr-config
         mountPath: /config
         accessMode: ReadWriteOnce
         size: 2Gi
         storageClass: longhorn
+    persistence:
+      media:
+        enabled: true
+        type: nfs
+        server: 10.0.0.165
+        path: /volume1/Main
+        mountPath: /Main
     ingress:
       main:
         enabled: true
