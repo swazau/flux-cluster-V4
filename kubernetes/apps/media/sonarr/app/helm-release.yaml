@@ -43,23 +43,23 @@ spec:
           http:
             port: *port
     podSecurityContext:
-      supplementalGroups:
-        - 1042
-    persistence:
-      config:
-        enabled: true
-        existingClaim: sonarr-config
-      # media:
-      #   enabled: true
-      #   type: pvc
-      #   mountPath: /media
-      #   existingClaim: media
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
+      fsGroupChangePolicy: "OnRootMismatch"
+      supplementalGroups: [10000]
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 2Gi
+        storageClass: longhorn
     ingress:
       main:
         enabled: true
         ingressClassName: nginx
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-production
+          cert-manager.io/cluster-issuer: letsencrypt-staging
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_DOMAIN}/css/base/sonarr/nord.css"></head>';
