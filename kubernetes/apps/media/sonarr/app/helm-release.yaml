@@ -49,11 +49,11 @@ spec:
       config:
         enabled: true
         existingClaim: sonarr-config
-      media:
-        enabled: true
-        type: pvc
-        mountPath: /media
-        existingClaim: media
+      # media:
+      #   enabled: true
+      #   type: pvc
+      #   mountPath: /media
+      #   existingClaim: media
     ingress:
       main:
         enabled: true
