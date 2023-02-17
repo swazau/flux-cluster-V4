@@ -1,0 +1,17 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sabnzbd-config
+  namespace: media
+  labels:
+    snapshot.home.arpa/enabled: "true"
+    app.kubernetes.io/instance: sabnzbd
+    app.kubernetes.io/name: sabnzbd
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: longhorn
