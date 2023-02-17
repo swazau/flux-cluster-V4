@@ -117,12 +117,12 @@ spec:
         server: 10.0.0.165
         path: /volume1/Main/data/usenet
         mountPath: /Main
-      incomplete:
-        enabled: true
-        type: nfs
-        server: 10.0.0.165
-        path: /volume1/Main/data/usenet/incomplete
-        mountPath: /Main
+      # incomplete:
+      #   enabled: true
+      #   type: nfs
+      #   server: 10.0.0.165
+      #   path: /volume1/Main/data/usenet/incomplete
+      #   mountPath: /Main
     nodeSelector:
       node-role.kubernetes.io/worker: "true"
     resources:
