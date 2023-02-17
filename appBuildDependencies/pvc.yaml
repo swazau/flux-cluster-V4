@@ -1,0 +1,17 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: appName101-config
+  namespace: appNamespace101
+  labels:
+    snapshot.home.arpa/enabled: "true"
+    app.kubernetes.io/instance: appName101
+    app.kubernetes.io/name: appName101
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: pvcSize101Gi
+  storageClassName: longhorn
