@@ -44,7 +44,7 @@ spec:
         sabnzbd.default.svc.cluster,
         sabnzbd.default.svc.cluster.local,
         sabnzbd.devbu.io
-    # envFrom:
+    # envFrom:x`x`
     #   - secretRef:
     #       name: sabnzbd-secret
     service:
@@ -119,7 +119,7 @@ spec:
         mountPath: /Main
       incomplete:
         enabled: true
-        type: /volume1/Main/data/usenet/incomplete
+        path: /volume1/Main/data/usenet/incomplete
     nodeSelector:
       node-role.kubernetes.io/worker: "true"
     resources:
