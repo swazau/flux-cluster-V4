@@ -95,7 +95,9 @@ spec:
         mountPath: /Main
       incomplete:
         enabled: true
-        type: /volume1/Main/data/torrents/incomplete
+        type: nfs
+        server: 10.0.0.165
+        path: /volume1/Main/data/torrents/incomplete
     # nodeSelector:
     #   node-role.kubernetes.io/worker: "true"
     resources:
