@@ -48,13 +48,16 @@ spec:
       fsGroup: 568
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups: [10000]
-    volumeClaimTemplates:
-      - name: radarr-config
-        mountPath: /config
-        accessMode: ReadWriteOnce
-        size: 2Gi
-        storageClass: longhorn
+    # volumeClaimTemplates:
+    #   - name: radarr-config
+    #     mountPath: /config
+    #     accessMode: ReadWriteOnce
+    #     size: 2Gi
+    #     storageClass: longhorn
     persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr-config
       media:
         enabled: true
         type: nfs
