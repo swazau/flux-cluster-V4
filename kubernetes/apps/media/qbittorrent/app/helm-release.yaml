@@ -3,8 +3,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: qbittorrent
-  namespace: default
+  name: &app qbittorrent
+  namespace: media
 spec:
   interval: 15m
   chart:
