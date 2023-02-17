@@ -96,11 +96,11 @@ spec:
       incomplete:
         enabled: true
         type: /volume1/Main/data/torrents/incomplete
-    nodeSelector:
-      node-role.kubernetes.io/worker: "true"
+    # nodeSelector:
+    #   node-role.kubernetes.io/worker: "true"
     resources:
       requests:
         cpu: 10m
         memory: 250Mi
       limits:
-        memory: 6000Mi
+        memory: 3000Mi

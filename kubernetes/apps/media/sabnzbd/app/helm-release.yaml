@@ -123,8 +123,8 @@ spec:
       #   server: 10.0.0.165
       #   path: /volume1/Main/data/usenet/incomplete
       #   mountPath: /Main
-    nodeSelector:
-      node-role.kubernetes.io/worker: "true"
+    # nodeSelector:
+    #   node-role.kubernetes.io/worker: "true"
     resources:
       requests:
         cpu: 10m
