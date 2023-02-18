@@ -92,7 +92,7 @@ spec:
         type: nfs
         server: 10.0.0.165
         path: /volume1/Main/data/torrents
-        mountPath: /Main
+        mountPath: /torrents
       # incomplete:
       #   enabled: true
       #   type: nfs
