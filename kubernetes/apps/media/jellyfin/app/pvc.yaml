@@ -1,0 +1,17 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: jellyfin-config
+  namespace: media
+  labels:
+    snapshot.home.arpa/enabled: "true"
+    app.kubernetes.io/instance: jellyfin
+    app.kubernetes.io/name: jellyfin
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: longhorn
