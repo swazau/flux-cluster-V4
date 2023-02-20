@@ -16,3 +16,4 @@ resources:
   - ./stakater.yaml
   - ./weave-gitops.yaml
   - ./longhorn.yaml
+  - ./angelnu.yaml
