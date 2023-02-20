@@ -10,7 +10,7 @@ metadata:
 spec:
   egress:
     - ports:
-        - port: 44414
+        - port: 51820
           protocol: UDP
       to:
         - ipBlock:
