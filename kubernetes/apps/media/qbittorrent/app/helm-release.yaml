@@ -54,6 +54,8 @@ spec:
             protocol: TCP
             targetPort: *port-bt
         externalTrafficPolicy: Local
+    podAnnotations:
+      setGateway: "true"
     ingress:
       main:
         enabled: true
@@ -94,12 +96,12 @@ spec:
         path: /volume1/Main/data/torrents
         mountPath: /torrents
       # incomplete:
-      #   enabled: true
-      #   type: nfs
-      #   server: 10.0.0.165
-      #   path: /volume1/Main/data/torrents/incomplete
-    # nodeSelector:
-    #   node-role.kubernetes.io/worker: "true"
+         #enabled: true
+         #type: nfs
+         #server: 10.0.0.165
+         #path: /volume1/Main/data/torrents/incomplete
+     #nodeSelector:
+       #node-role.kubernetes.io/worker: "true"
     resources:
       requests:
         cpu: 10m
