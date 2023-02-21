@@ -48,6 +48,8 @@ spec:
         ports:
           http:
             port: *port
+    podAnnotations:
+      setGateway: "true"
     ingress:
       main:
         enabled: true
