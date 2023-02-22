@@ -58,7 +58,7 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hosts:
-          - host: nucjelly.${SECRET_DOMAIN}"
+          - host: &host "nucjelly.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
