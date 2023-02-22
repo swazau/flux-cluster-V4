@@ -67,8 +67,8 @@ spec:
       readiness: *probes
       startup:
         enabled: false
-    # podAnnotations:
-    #   setGateway: "true"
+    podAnnotations:
+      setGateway: "true"
     ingress:
       main:
         enabled: true
