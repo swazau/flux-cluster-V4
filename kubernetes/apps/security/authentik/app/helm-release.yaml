@@ -20,6 +20,12 @@ spec:
     image:
       repository: ghcr.io/goauthentik/server
       tag: 2023.2.2
+
+    service:
+      main:
+        ports:
+          http:
+            port: &port 9000
     ingress:
       main:
         enabled: true
