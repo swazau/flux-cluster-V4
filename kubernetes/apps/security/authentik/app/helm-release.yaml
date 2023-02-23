@@ -16,15 +16,16 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    # replicaCount: 1
-    # image:
-    #   repository: ghcr.io/goauthentik/server
-    #   tag: 2023.2.2
+    replicaCount: 1
+    image:
+      repository: ghcr.io/goauthentik/server
+      tag: 2023.2.2
     ingress:
       main:
         enabled: true
         ingressClassName: nginx
         annotations:
+          external-dns.home.arpa/enabled: "true"
           cert-manager.io/cluster-issuer: letsencrypt-staging
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hosts:
