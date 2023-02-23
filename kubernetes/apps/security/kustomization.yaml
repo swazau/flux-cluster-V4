@@ -4,4 +4,3 @@ kind: Kustomization
 resources:
   - ./authentik/ks.yaml
   - ./namespace.yaml
-  - ./echo-server-test/ks.yaml
