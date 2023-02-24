@@ -30,7 +30,7 @@ spec:
       enabled: true
       ingressClassName: nginx
       annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-staging
+        #cert-manager.io/cluster-issuer: letsencrypt-staging
         external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
       hosts:
         - host: &host "auth.${SECRET_DOMAIN}"
@@ -38,8 +38,7 @@ spec:
             - path: /
               pathType: Prefix
       tls:
-        - secretName: authentik-tls
-          hosts:
+        - hosts:
             - *host
     authentik:
       error_reporting:
