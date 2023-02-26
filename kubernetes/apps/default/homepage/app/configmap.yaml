@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: homepage-config
-  namespace: home
+  namespace: default
   labels:
     app.kubernetes.io/name: homepage
   annotations:
