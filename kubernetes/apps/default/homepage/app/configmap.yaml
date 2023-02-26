@@ -45,7 +45,7 @@ data:
     ---
     # - logo:
     - search:
-        provider: duckduckgo
+        provider: brave
         target: _blank
         # focus: true # Optional, will set focus to the search bar on page load
     - openmeteo:
